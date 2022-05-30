@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:weightSum="12.5"
+    android:id="@+id/ll_Main"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:baselineAligned="false"
+        android:id="@+id/ll_Sub1"
+        android:weightSum="5"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_Sub_Sub1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/tvDealName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Deal Name"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+
+
+            <EditText
+                android:id="@+id/txtDealName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:focusable="false"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvPizzas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pizzas"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/txtPizzas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:focusable="false"
+                android:tag=""
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/tvSalads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Salads"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+
+            <EditText
+                android:id="@+id/txtSalads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:focusable="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Price"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/txtPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:focusable="false"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="9.5"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:layout_marginBottom="1dp"
+        android:id="@+id/ll_Sub2"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:id="@+id/ll_Sub2_1"
+            >
+
+            <TextView
+                android:id="@+id/tvSubmenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PIZZAS"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:background="@drawable/menu_heading"
+                />
+            <ScrollView
+                android:id="@+id/sv_SubMenus"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="1"
+
+                >
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/ll_SubMenus"
+                    android:columnCount="3"
+                    >
+                </GridLayout>
+            </ScrollView>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/LV"
+
+                android:divider="@color/background"
+                android:background="@drawable/btn_grey"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
+            android:orientation="vertical"
+            android:background="@drawable/edittext_border"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:id="@+id/ll_Sub2_2"
+            >
+
+            <TextView
+                android:id="@+id/tvMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SALADS"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:background="@drawable/menu_heading"
+                />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="1"
+                >
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:stretchMode="none"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/ll_Menus"
+                    android:columnCount="5"
+                    >
+                </GridLayout>
+            </ScrollView>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/LVSalads"
+                android:divider="@color/background"
+                android:background="@drawable/btn_grey"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:layout_marginBottom="1dp"
+        android:id="@+id/ll_Sub_Last"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/cmdOK"
+            android:text="OK"
+            android:textSize="20sp"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/cmdCancel"
+            android:text="Cancel"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+</LinearLayout>
