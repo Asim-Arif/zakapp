@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/background"
-    android:weightSum="12"
+    android:weightSum="13"
     android:descendantFocusability="blocksDescendants"
 
 
@@ -11,10 +11,10 @@
         <TextView
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="8"
+            android:layout_weight="7"
             android:id="@+id/txtItemName"
             android:textAlignment="textStart"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:background="@drawable/lv_items_layout"
             android:textColor="@color/black"
@@ -56,7 +56,8 @@
         <Button
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
+            android:layout_margin="1dp"
             android:text="+"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -67,7 +68,8 @@
         <Button
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
+            android:layout_margin="1dp"
             android:text="-"
             android:textSize="18sp"
             android:textStyle="bold"

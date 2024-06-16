@@ -193,28 +193,28 @@ public class pos extends Activity {
         ll=(LinearLayout) findViewById(R.id.ll_FH_1);
         assignTables(ll,0);
         ll=(LinearLayout) findViewById(R.id.ll_FH_2);
-        assignTables(ll,20);
+        assignTables(ll,8);
 
         ll=(LinearLayout) findViewById(R.id.ll_LH_1);
-        assignTables(ll,40);
+        assignTables(ll,15);
         ll=(LinearLayout) findViewById(R.id.ll_LH_2);
-        assignTables(ll,50);
+        assignTables(ll,23);
 
         ll=(LinearLayout) findViewById(R.id.ll_GH_1);
-        assignTables(ll,60);
+        assignTables(ll,30);
         ll=(LinearLayout) findViewById(R.id.ll_GH_2);
-        assignTables(ll,70);
+        assignTables(ll,40);
 
         ll=(LinearLayout) findViewById(R.id.ll_Cafe_1);
-        assignTables(ll,80);
+        assignTables(ll,50);
         ll=(LinearLayout) findViewById(R.id.ll_Cafe_2);
-        assignTables(ll,90);
+        assignTables(ll,58);
 
-        ll=(LinearLayout) findViewById(R.id.ll_TakeAway_1);
+        /*ll=(LinearLayout) findViewById(R.id.ll_TakeAway_1);
         assignTables(ll,99);
         ll=(LinearLayout) findViewById(R.id.ll_TakeAway_2);
         assignTables(ll,105);
-
+*/
         iDealGroupID=Integer.parseInt(utility_functions.getSingleStringValue("DataValue","GeneralData"," WHERE DataName='DealGroupNumber'",context));
         iMilliSeconds = Integer.parseInt(utility_functions.getSingleStringValue("DataValue","GeneralData"," WHERE DataName='Tables_Refresh_Seconds'",context));
         iMilliSeconds = iMilliSeconds *1000;
@@ -240,7 +240,8 @@ public class pos extends Activity {
             {
                 GridLayout menuLayout = (GridLayout) findViewById(R.id.ll_Menus);
                 Button b1 = new Button(this);
-                strMenu_Urdu=rs.getString("UrduDescription");
+                //strMenu_Urdu=rs.getString("UrduDescription");
+                strMenu_Urdu=rs.getString("Description");
                 iID=rs.getInt("ID");
                 //b1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 b1.setText(strMenu_Urdu);
@@ -281,11 +282,13 @@ public class pos extends Activity {
 
                 b1.setTextSize(TypedValue.COMPLEX_UNIT_DIP,iFontSize);
                 //b1.setTextSize(TypedValue.COMPLEX_UNIT_DIP,25);
-                //b1.setTypeface(null,Typeface.BOLD);
-                b1.setTextColor(Color.WHITE);
+                b1.setTypeface(null,Typeface.BOLD);
+                //b1.setTextColor(Color.WHITE);
                 int iBKColor;
 
                 iBKColor=rs.getInt("GrpColor");
+                if (iBKColor==0)
+                    iBKColor=986895;
                 String strColor=utility_functions.covertToAndroidColor(String.valueOf(iBKColor));
                 try{
                     iBKColor=Color.parseColor(strColor);
@@ -347,7 +350,7 @@ public class pos extends Activity {
             {
                 GridLayout menuLayout = (GridLayout) findViewById(R.id.ll_SubMenus);
                 Button b1 = new Button(this);
-                strMenu_Urdu=rs.getString("UrduName");
+                strMenu_Urdu=rs.getString("DealName");
                 iID=rs.getInt("EntryID");
                 //b1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 b1.setText(strMenu_Urdu);
@@ -520,7 +523,8 @@ public class pos extends Activity {
 
         int iSaleType=0;
         Button cmdSelected=(Button) findViewById(view.getId());
-        String strTableNo=cmdSelected.getText().toString();
+        //String strTableNo=cmdSelected.getText().toString();
+        String strTableNo=cmdSelected.getTag().toString();
         int iTableNo=Integer.parseInt(strTableNo);
         tableData tableData_Obj=(tableData) TableData_List.get(iTableNo-1);
         //If iStatus=1, it means it holds some data, we need to load pending sale.
@@ -583,7 +587,7 @@ public class pos extends Activity {
         int lInvNoFromPending=0,lInvNoFromSales=0,lInvoiceNo=0;
         if (txtServer.getTag().toString().equals(""))
         {
-            lInvNoFromPending = utility_functions.getSingleIntValue("MAX(InvoiceNo)","PendingSales","",context);
+            lInvNoFromPending = utility_functions.getSingleIntValue("MAX(InvoiceNo)","PendingSales","WHERE CAST(CAST(DTEntry AS DATE) AS DATETIME)='"+strDT+"'",context);
             lInvNoFromSales = utility_functions.getSingleIntValue("MAX(InvoiceNo)", "ItemSales", " WHERE DT='" + strDT + "'",context);
             if (lInvNoFromPending > lInvNoFromSales)
                 lInvoiceNo = lInvNoFromPending;
@@ -852,7 +856,7 @@ public class pos extends Activity {
                 }
             }
             rs.close();
-            query="SELECT EntryID,TableNo FROM ItemSales WHERE CashRcvd=0 AND SaleType NOT IN(2,3,4,5) AND ISNULL(TableNo,'')<>''";
+            query="SELECT EntryID,TableNo FROM VItemSales WHERE CashRcvd=0 AND Payment_Type=0 AND ISNULL(TableNo,'')<>''";
             stmt=MyCon.prepareStatement(query);
             rs=stmt.executeQuery();
             while (rs.next()){

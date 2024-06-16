@@ -41,13 +41,13 @@ public class DBHelper {
         //strSQLIP="192.168.8.105";
         //strSQLIP="192.168.43.242";
 
-        //Boison Settings
-        strSQLIP="192.168.41.5";
+        //ZAK Settings
+        strSQLIP="100.1.1.210";
         strSQLPort="1433";
         //
 
         //Laptop Settings
-        //strSQLIP="192.168.10.18";
+        //strSQLIP="192.168.0.16";
         //strSQLPort="51178";
         //
 

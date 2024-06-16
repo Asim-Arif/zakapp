@@ -26,15 +26,15 @@
     <string name="minus">Minus</string>
 
     <string name="dine">Dine</string>
-    <string name="take_away">Take Away</string>
+    <string name="take_away">Out Door</string>
     <string name="delivery">Delivery</string>
     <string name="order_type">Order Type:</string>
     <string name="send_to_kitchen">Send To Kitchen</string>
 
-    <string name="family_hall">Family Hall</string>
-    <string name="laiba_hall">Laiba Hall</string>
-    <string name="gents_hall">Gents Hall</string>
-    <string name="cafe">Cafe</string>
+    <string name="family_hall">Ground Floor</string>
+    <string name="laiba_hall">Out Door</string>
+    <string name="gents_hall">Family Hall</string>
+    <string name="cafe">Take Away</string>
 
     <string name="date">Date</string>
     <string name="tableno">Table No</string>

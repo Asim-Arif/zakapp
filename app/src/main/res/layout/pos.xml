@@ -346,7 +346,7 @@
                 android:layout_marginLeft="15dp"
                 android:background="@color/deep_orange"
                 android:layout_weight="1"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
 
             <Button
                 android:id="@+id/btntakeaway"
@@ -377,13 +377,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:weightSum="20"
+                android:weightSum="8"
                 android:layout_weight="1"
                 android:id="@+id/ll_FH_1"
                 >
                 <Button
                     android:id="@+id/tbl1"
-                    android:text="1"
+                    android:text="F 1"
+                    android:tag="1"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -392,7 +393,8 @@
                     />
                 <Button
                     android:id="@+id/tbl2"
-                    android:text="2"
+                    android:text="F 2"
+                    android:tag="2"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -401,7 +403,8 @@
                     />
                 <Button
                     android:id="@+id/tbl3"
-                    android:text="3"
+                    android:text="F 3"
+                    android:tag="3"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -410,7 +413,8 @@
                     />
                 <Button
                     android:id="@+id/tbl4"
-                    android:text="4"
+                    android:text="F 4"
+                    android:tag="4"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -419,7 +423,8 @@
                     />
                 <Button
                     android:id="@+id/tbl5"
-                    android:text="5"
+                    android:text="F 5"
+                    android:tag="5"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -428,7 +433,8 @@
                     />
                 <Button
                     android:id="@+id/tbl6"
-                    android:text="6"
+                    android:text="F 6"
+                    android:tag="6"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -437,7 +443,8 @@
                     />
                 <Button
                     android:id="@+id/tbl7"
-                    android:text="7"
+                    android:text="F 7"
+                    android:tag="7"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -446,16 +453,28 @@
                     />
                 <Button
                     android:id="@+id/tbl8"
-                    android:text="8"
+                    android:text="F 8"
+                    android:tag="8"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_horizontal"
                     android:onClick="tbl_btn_click"
                     />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="8"
+                android:layout_weight="1"
+                android:id="@+id/ll_FH_2"
+                >
                 <Button
                     android:id="@+id/tbl9"
-                    android:text="9"
+                    android:text="F 9"
+                    android:tag="9"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -464,7 +483,8 @@
                     />
                 <Button
                     android:id="@+id/tbl10"
-                    android:text="10"
+                    android:text="F 10"
+                    android:tag="10"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -473,7 +493,8 @@
                     />
                 <Button
                     android:id="@+id/tbl11"
-                    android:text="11"
+                    android:text="F 11"
+                    android:tag="11"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -482,7 +503,8 @@
                     />
                 <Button
                     android:id="@+id/tbl12"
-                    android:text="12"
+                    android:text="F 12"
+                    android:tag="12"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -491,7 +513,8 @@
                     />
                 <Button
                     android:id="@+id/tbl13"
-                    android:text="13"
+                    android:text="F 13"
+                    android:tag="13"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -500,7 +523,8 @@
                     />
                 <Button
                     android:id="@+id/tbl14"
-                    android:text="14"
+                    android:text="F 14"
+                    android:tag="14"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -509,244 +533,11 @@
                     />
                 <Button
                     android:id="@+id/tbl15"
-                    android:text="15"
+                    android:text="F 15"
+                    android:tag="15"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl16"
-                    android:text="16"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl17"
-                    android:text="17"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl18"
-                    android:text="18"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl19"
-                    android:text="19"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl20"
-                    android:text="20"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:weightSum="20"
-                android:layout_weight="1"
-                android:id="@+id/ll_FH_2"
-                >
-                <Button
-                    android:id="@+id/tbl21"
-                    android:text="21"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl22"
-                    android:text="22"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl23"
-                    android:text="23"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl24"
-                    android:text="24"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl25"
-                    android:text="25"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl26"
-                    android:text="26"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl27"
-                    android:text="27"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl28"
-                    android:text="28"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl29"
-                    android:text="29"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl30"
-                    android:text="30"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl31"
-                    android:text="31"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl32"
-                    android:text="32"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl33"
-                    android:text="33"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl34"
-                    android:text="34"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl35"
-                    android:text="35"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl36"
-                    android:text="36"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl37"
-                    android:text="37"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl38"
-                    android:text="38"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl39"
-                    android:text="39"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="tbl_btn_click"
-                    />
-                <Button
-                    android:id="@+id/tbl40"
-                    android:text="40"
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:layout_gravity="center_horizontal"
                     android:onClick="tbl_btn_click"
                     />
@@ -768,13 +559,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:weightSum="10"
+            android:weightSum="8"
             android:layout_weight="1"
             android:id="@+id/ll_LH_1"
             >
             <Button
                 android:id="@+id/tbl41"
-                android:text="41"
+                android:text="G 1"
+                android:tag="16"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -783,7 +575,8 @@
                 />
             <Button
                 android:id="@+id/tbl42"
-                android:text="42"
+                android:text="G 2"
+                android:tag="17"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -792,7 +585,8 @@
                 />
             <Button
                 android:id="@+id/tbl43"
-                android:text="43"
+                android:text="G 3"
+                android:tag="18"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -801,7 +595,8 @@
                 />
             <Button
                 android:id="@+id/tbl44"
-                android:text="44"
+                android:text="G 4"
+                android:tag="19"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -810,7 +605,8 @@
                 />
             <Button
                 android:id="@+id/tbl45"
-                android:text="45"
+                android:text="G 5"
+                android:tag="20"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -819,7 +615,8 @@
                 />
             <Button
                 android:id="@+id/tbl46"
-                android:text="46"
+                android:text="G 6"
+                android:tag="21"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -828,7 +625,8 @@
                 />
             <Button
                 android:id="@+id/tbl47"
-                android:text="47"
+                android:text="G 7"
+                android:tag="22"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -837,25 +635,8 @@
                 />
             <Button
                 android:id="@+id/tbl48"
-                android:text="48"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl49"
-                android:text="49"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl50"
-                android:text="50"
+                android:text="G 8"
+                android:tag="23"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -868,13 +649,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:weightSum="10"
+            android:weightSum="8"
             android:layout_weight="1"
             android:id="@+id/ll_LH_2"
             >
             <Button
                 android:id="@+id/tbl51"
-                android:text="51"
+                android:text="G 9"
+                android:tag="24"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -883,7 +665,8 @@
                 />
             <Button
                 android:id="@+id/tbl52"
-                android:text="52"
+                android:text="G 10"
+                android:tag="25"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -892,7 +675,8 @@
                 />
             <Button
                 android:id="@+id/tbl53"
-                android:text="53"
+                android:text="G 11"
+                android:tag="26"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -901,7 +685,8 @@
                 />
             <Button
                 android:id="@+id/tbl54"
-                android:text="54"
+                android:text="G 12"
+                android:tag="27"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -910,7 +695,8 @@
                 />
             <Button
                 android:id="@+id/tbl55"
-                android:text="55"
+                android:text="G 13"
+                android:tag="28"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -919,7 +705,8 @@
                 />
             <Button
                 android:id="@+id/tbl56"
-                android:text="56"
+                android:text="G 14"
+                android:tag="29"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -928,41 +715,14 @@
                 />
             <Button
                 android:id="@+id/tbl57"
-                android:text="57"
+                android:text="G 15"
+                android:tag="30"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_gravity="center_horizontal"
                 android:onClick="tbl_btn_click"
                 />
-            <Button
-                android:id="@+id/tbl58"
-                android:text="58"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl59"
-                android:text="59"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl60"
-                android:text="60"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-
         </LinearLayout>
 
     </LinearLayout>
@@ -987,7 +747,8 @@
             >
             <Button
                 android:id="@+id/tbl61"
-                android:text="61"
+                android:text="OD 1"
+                android:tag="31"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -996,7 +757,8 @@
                 />
             <Button
                 android:id="@+id/tbl62"
-                android:text="62"
+                android:text="OD 2"
+                android:tag="32"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1005,7 +767,8 @@
                 />
             <Button
                 android:id="@+id/tbl63"
-                android:text="63"
+                android:text="OD 3"
+                android:tag="33"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1014,7 +777,8 @@
                 />
             <Button
                 android:id="@+id/tbl64"
-                android:text="64"
+                android:text="OD 4"
+                android:tag="34"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1023,7 +787,8 @@
                 />
             <Button
                 android:id="@+id/tbl65"
-                android:text="65"
+                android:text="OD 5"
+                android:tag="35"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1032,7 +797,8 @@
                 />
             <Button
                 android:id="@+id/tbl66"
-                android:text="66"
+                android:text="OD 6"
+                android:tag="36"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1041,7 +807,8 @@
                 />
             <Button
                 android:id="@+id/tbl67"
-                android:text="67"
+                android:text="OD 7"
+                android:tag="37"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1050,7 +817,8 @@
                 />
             <Button
                 android:id="@+id/tbl68"
-                android:text="68"
+                android:text="OD 8"
+                android:tag="38"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1059,7 +827,8 @@
                 />
             <Button
                 android:id="@+id/tbl69"
-                android:text="69"
+                android:text="OD 9"
+                android:tag="39"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1068,7 +837,8 @@
                 />
             <Button
                 android:id="@+id/tbl70"
-                android:text="70"
+                android:text="OD 10"
+                android:tag="40"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1087,7 +857,8 @@
             >
             <Button
                 android:id="@+id/tbl71"
-                android:text="71"
+                android:text="OD 10"
+                android:tag="41"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1096,7 +867,8 @@
                 />
             <Button
                 android:id="@+id/tbl72"
-                android:text="72"
+                android:text="OD 12"
+                android:tag="42"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1105,7 +877,8 @@
                 />
             <Button
                 android:id="@+id/tbl73"
-                android:text="73"
+                android:text="OD 13"
+                android:tag="43"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1114,7 +887,8 @@
                 />
             <Button
                 android:id="@+id/tbl74"
-                android:text="74"
+                android:text="OD 14"
+                android:tag="44"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1123,7 +897,8 @@
                 />
             <Button
                 android:id="@+id/tbl75"
-                android:text="75"
+                android:text="OD 15"
+                android:tag="45"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1132,7 +907,8 @@
                 />
             <Button
                 android:id="@+id/tbl76"
-                android:text="76"
+                android:text="OD 16"
+                android:tag="46"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1141,7 +917,8 @@
                 />
             <Button
                 android:id="@+id/tbl77"
-                android:text="77"
+                android:text="OD 17"
+                android:tag="47"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1150,7 +927,8 @@
                 />
             <Button
                 android:id="@+id/tbl78"
-                android:text="78"
+                android:text="OD 18"
+                android:tag="48"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1159,7 +937,8 @@
                 />
             <Button
                 android:id="@+id/tbl79"
-                android:text="79"
+                android:text="OD 19"
+                android:tag="49"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1168,7 +947,8 @@
                 />
             <Button
                 android:id="@+id/tbl80"
-                android:text="80"
+                android:text="OD 20"
+                android:tag="50"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1193,13 +973,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:weightSum="10"
+            android:weightSum="8"
             android:layout_weight="1"
             android:id="@+id/ll_Cafe_1"
             >
             <Button
                 android:id="@+id/tbl81"
-                android:text="81"
+                android:text="TA 1"
+                android:tag="51"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1208,7 +989,8 @@
                 />
             <Button
                 android:id="@+id/tbl82"
-                android:text="82"
+                android:text="TA 2"
+                android:tag="52"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1217,7 +999,8 @@
                 />
             <Button
                 android:id="@+id/tbl83"
-                android:text="83"
+                android:text="TA 3"
+                android:tag="53"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1226,7 +1009,8 @@
                 />
             <Button
                 android:id="@+id/tbl84"
-                android:text="84"
+                android:text="TA 4"
+                android:tag="54"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1235,7 +1019,8 @@
                 />
             <Button
                 android:id="@+id/tbl85"
-                android:text="85"
+                android:text="TA 5"
+                android:tag="55"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1244,7 +1029,8 @@
                 />
             <Button
                 android:id="@+id/tbl86"
-                android:text="86"
+                android:text="TA 6"
+                android:tag="56"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1253,7 +1039,8 @@
                 />
             <Button
                 android:id="@+id/tbl87"
-                android:text="87"
+                android:text="TA 7"
+                android:tag="57"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1262,25 +1049,8 @@
                 />
             <Button
                 android:id="@+id/tbl88"
-                android:text="88"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl89"
-                android:text="89"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl90"
-                android:text="90"
+                android:text="TA 8"
+                android:tag="58"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1288,18 +1058,20 @@
                 android:onClick="tbl_btn_click"
                 />
 
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:weightSum="10"
+            android:weightSum="8"
             android:layout_weight="1"
             android:id="@+id/ll_Cafe_2"
             >
             <Button
                 android:id="@+id/tbl91"
-                android:text="91"
+                android:text="TA 9"
+                android:tag="59"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1308,7 +1080,8 @@
                 />
             <Button
                 android:id="@+id/tbl92"
-                android:text="92"
+                android:text="TA 10"
+                android:tag="60"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1317,7 +1090,8 @@
                 />
             <Button
                 android:id="@+id/tbl93"
-                android:text="93"
+                android:text="TA 11"
+                android:tag="61"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1326,7 +1100,8 @@
                 />
             <Button
                 android:id="@+id/tbl94"
-                android:text="94"
+                android:text="TA 12"
+                android:tag="62"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1335,7 +1110,8 @@
                 />
             <Button
                 android:id="@+id/tbl95"
-                android:text="95"
+                android:text="TA 13"
+                android:tag="63"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1344,7 +1120,8 @@
                 />
             <Button
                 android:id="@+id/tbl96"
-                android:text="96"
+                android:text="TA 14"
+                android:tag="64"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -1353,31 +1130,15 @@
                 />
             <Button
                 android:id="@+id/tbl97"
-                android:text="97"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl98"
-                android:text="98"
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:onClick="tbl_btn_click"
-                />
-            <Button
-                android:id="@+id/tbl99"
-                android:text="99"
+                android:text="TA 15"
+                android:tag="65"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_gravity="center_horizontal"
                 android:onClick="tbl_btn_click"
                 />
+
 
         </LinearLayout>
 
