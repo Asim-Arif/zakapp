@@ -576,14 +576,16 @@ public class pos extends Activity {
         if (CurrentTime.get(Calendar.HOUR)<7)
         {
             CurrentTime.add(Calendar.DATE,-1);
-            strDT=utility_functions.convertDateToString(CurrentTime.getTime(),"MMM-dd-yyyy");
+            //strDT=utility_functions.convertDateToString(CurrentTime.getTime(),"MMM-dd-yyyy");
             //DTInvoice=utility_functions.convertStringToSQLDate(strDT,context);
         }
         else
         {
-            strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
+            //strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
             //DTInvoice=utility_functions.convertStringToSQLDate(strDT,context);
         }
+        strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
+        strDT=strDT.substring(0,10);
         int lInvNoFromPending=0,lInvNoFromSales=0,lInvoiceNo=0;
         if (txtServer.getTag().toString().equals(""))
         {
