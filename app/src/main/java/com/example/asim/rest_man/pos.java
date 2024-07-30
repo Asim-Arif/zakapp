@@ -571,26 +571,29 @@ public class pos extends Activity {
         final java.util.Calendar CurrentTime=java.util.Calendar.getInstance();
         java.util.Date DT=null;
         DT=utility_functions.getCurrentDate(context);
+        java.sql.Date sqlDate=new java.sql.Date(DT.getTime());
         String strDT="";
-        Date DTInvoice=null;
-        if (CurrentTime.get(Calendar.HOUR)<7)
+        java.sql.Date DTInvoice=null;
+        if (CurrentTime.get(Calendar.HOUR_OF_DAY)<5)
         {
             CurrentTime.add(Calendar.DATE,-1);
-            //strDT=utility_functions.convertDateToString(CurrentTime.getTime(),"MMM-dd-yyyy");
+            DTInvoice=new java.sql.Date(CurrentTime.getTime().getTime());
+            strDT=utility_functions.convertDateToString(CurrentTime.getTime(),"MMM-dd-yyyy");
             //DTInvoice=utility_functions.convertStringToSQLDate(strDT,context);
         }
         else
         {
-            //strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
+            DTInvoice=new java.sql.Date(CurrentTime.getTime().getTime());
+            strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
             //DTInvoice=utility_functions.convertStringToSQLDate(strDT,context);
         }
-        strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
-        strDT=strDT.substring(0,10);
+        //strDT=utility_functions.convertDateToString(DT,"yyyy-MM-dd HH:mm:ss z");
+        //strDT=strDT.substring(0,10);
         int lInvNoFromPending=0,lInvNoFromSales=0,lInvoiceNo=0;
         if (txtServer.getTag().toString().equals(""))
         {
-            lInvNoFromPending = utility_functions.getSingleIntValue("MAX(InvoiceNo)","PendingSales","WHERE CAST(CAST(DTEntry AS DATE) AS DATETIME)='"+strDT+"'",context);
-            lInvNoFromSales = utility_functions.getSingleIntValue("MAX(InvoiceNo)", "ItemSales", " WHERE DT='" + strDT + "'",context);
+            lInvNoFromPending = utility_functions.getSingleIntValue("MAX(InvoiceNo)","PendingSales","WHERE CAST(CAST(DTEntry_For_InvoiceNo AS DATE) AS DATETIME)='"+DTInvoice.toString()+"'",context);
+            lInvNoFromSales = utility_functions.getSingleIntValue("MAX(InvoiceNo)", "ItemSales", " WHERE DT='" + DTInvoice.toString() + "'",context);
             if (lInvNoFromPending > lInvNoFromSales)
                 lInvoiceNo = lInvNoFromPending;
             else
@@ -637,7 +640,7 @@ public class pos extends Activity {
         try {
             MyCon.setAutoCommit(false);
             if (lPendingSaleEntryID==0) {
-                strQuery = "INSERT INTO PendingSales(ButtonNumber,Server,TableNo,Payable,Received,Status,UserName,MachineName,SaleType,DrinksUpsize,FriesUpsize,DrinksUpsizeRate,FriesUpsizeRate,InvoiceNo,ManualSTax,STaxAmt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                strQuery = "INSERT INTO PendingSales(ButtonNumber,Server,TableNo,Payable,Received,Status,UserName,MachineName,SaleType,DrinksUpsize,FriesUpsize,DrinksUpsizeRate,FriesUpsizeRate,InvoiceNo,ManualSTax,STaxAmt,DTEntry_Tab,DT_For_InvoiceNo,DTEntry_For_InvoiceNo) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 stmt = MyCon.prepareStatement(strQuery);
                 stmt.setInt(1, Integer.parseInt((txtTableNo.getText().toString())));
                 stmt.setString(2, txtServer.getText().toString());
@@ -655,6 +658,9 @@ public class pos extends Activity {
                 stmt.setInt(14, lInvoiceNo);
                 stmt.setInt(15, 0);
                 stmt.setInt(16, iSalesTax);
+                stmt.setDate(17,sqlDate);
+                stmt.setString(18,strDT);
+                stmt.setDate(19,DTInvoice);
                 stmt.addBatch();
                 stmt.executeBatch();
 
