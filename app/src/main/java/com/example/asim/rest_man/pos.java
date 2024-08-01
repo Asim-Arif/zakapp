@@ -820,6 +820,7 @@ public class pos extends Activity {
             myCursorAdapter.notifyDataSetChanged();
             txtTableNo.setText("");
             txtServer.setText("");
+            txtServer.setTag("");
             tableData_Obj.iStatus=1;
             tableData_Obj.iEntryID=iPS_EntryID;
             //tableData_Obj.btnTable.setBackgroundColor(Color.YELLOW);
@@ -1103,6 +1104,7 @@ public class pos extends Activity {
             myCursorAdapter.notifyDataSetChanged();
             txtTableNo.setText("");
             txtServer.setText("");
+            txtServer.setTag("");
             DealsData_List_Outer.clear();
             return false;
         }
