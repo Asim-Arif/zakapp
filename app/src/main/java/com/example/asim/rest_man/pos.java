@@ -76,7 +76,7 @@ public class pos extends Activity {
     ArrayList<tableData> TableData_List=new ArrayList<tableData>();
     //String strDeviceName="Emulator";
     String strDeviceName = BluetoothAdapter.getDefaultAdapter().getName();
-    int iSalesTax;
+    int iSalesTax,iSC_Amount;
     int iMilliSeconds;
     int iDealGroupID=0;
     boolean bDealGroup=false;
@@ -621,15 +621,21 @@ public class pos extends Activity {
             int iQty=Integer.parseInt(datanum.get("Qty"));
             iTotalAmount=iTotalAmount+(iQty*iRate);
         }
-        boolean bSTax_Enabled;
+        boolean bSTax_Enabled,bSC_Enabled;
         bSTax_Enabled = utility_functions.getSingleBooleanValue("Sales_Tax_Applicable", "Hall_List", " WHERE " + Integer.toString(iTableNo) + " BETWEEN TableFrom AND TableTo",context);
+        bSC_Enabled = utility_functions.getSingleBooleanValue("Service_Charges_Applicable", "Hall_List", " WHERE " + Integer.toString(iTableNo) + " BETWEEN TableFrom AND TableTo",context);
         iSalesTax=0;
+        iSC_Amount=0;
         if (bSTax_Enabled){
             double dSalesTaxPer;
             dSalesTaxPer = Double.parseDouble(utility_functions.getSingleStringValue("DataValue","GeneralData"," WHERE DataName='SalesTax'",context)) ;
             iSalesTax=(int) Math.round(iTotalAmount*(dSalesTaxPer /100));
         }
-
+        if (bSC_Enabled){
+            double dSCPer;
+            dSCPer = utility_functions.getSingleDoubleValue("Service_Charges_Rate","Hall_List", " WHERE " + Integer.toString(iTableNo) + " BETWEEN TableFrom AND TableTo",context);
+            iSC_Amount=(int) Math.round(iTotalAmount*(dSCPer /100));
+        }
         boolean bOrderChanged_New=false;
         String strUserName=utility_functions.getSingleStringValue("UserName","POS_Settings"," WHERE MachineName='"+strDeviceName+"'",context);
         DBHelper myDBH = new DBHelper();
@@ -640,7 +646,7 @@ public class pos extends Activity {
         try {
             MyCon.setAutoCommit(false);
             if (lPendingSaleEntryID==0) {
-                strQuery = "INSERT INTO PendingSales(ButtonNumber,Server,TableNo,Payable,Received,Status,UserName,MachineName,SaleType,DrinksUpsize,FriesUpsize,DrinksUpsizeRate,FriesUpsizeRate,InvoiceNo,ManualSTax,STaxAmt,DTEntry_Tab,DT_For_InvoiceNo,DTEntry_For_InvoiceNo) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                strQuery = "INSERT INTO PendingSales(ButtonNumber,Server,TableNo,Payable,Received,Status,UserName,MachineName,SaleType,DrinksUpsize,FriesUpsize,DrinksUpsizeRate,FriesUpsizeRate,InvoiceNo,ManualSTax,STaxAmt,DTEntry_Tab,DT_For_InvoiceNo,DTEntry_For_InvoiceNo,ServiceCharges) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 stmt = MyCon.prepareStatement(strQuery);
                 stmt.setInt(1, Integer.parseInt((txtTableNo.getText().toString())));
                 stmt.setString(2, txtServer.getText().toString());
@@ -661,17 +667,20 @@ public class pos extends Activity {
                 stmt.setDate(17,sqlDate);
                 stmt.setString(18,strDT);
                 stmt.setDate(19,DTInvoice);
+                stmt.setInt(20, iSC_Amount);
                 stmt.addBatch();
                 stmt.executeBatch();
 
                 iPS_EntryID = utility_functions.getSingleIntValue(MyCon, "MAX(EntryID)", "PendingSales", " WHERE MachineName='" + strDeviceName + "'", context);
             }
             else{
-                strQuery = "UPDATE PendingSales SET Payable=?,STaxAmt=? WHERE EntryID=?";
+                strQuery = "UPDATE PendingSales SET Payable=?,STaxAmt=?,ServiceCharges=? WHERE EntryID=?";
                 stmt = MyCon.prepareStatement(strQuery);
                 stmt.setInt(1, iTotalAmount);
-                stmt.setInt(2, lPendingSaleEntryID);
-                stmt.setInt(3, iSalesTax);
+                stmt.setInt(2, iSalesTax);
+                stmt.setInt(3, iSC_Amount);
+                stmt.setInt(4, lPendingSaleEntryID);
+
                 stmt.addBatch();
                 stmt.executeBatch();
                 iPS_EntryID=lPendingSaleEntryID;
@@ -938,6 +947,7 @@ public class pos extends Activity {
                 txtOrderFrom.setText(rs.getString("MachineName"));
                 txtOrderDuration.setText(rs.getString("TotalMinutes")+" Mins.");
                 iSalesTax= rs.getInt("STaxAmt");
+                iSC_Amount=rs.getInt("ServiceCharges");
                 rs.close();
                 //Lock the Table for others to See...
                 String strQuery = "INSERT INTO Tables_Locked(TableNo,MachineName) VALUES(?,?)";
