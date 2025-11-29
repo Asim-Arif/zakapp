@@ -47,7 +47,7 @@ public class DBHelper {
         //
 
         //Laptop Settings
-        //strSQLIP="192.168.0.16";
+        //strSQLIP="192.168.0.225";
         //strSQLIP="192.168.10.7";
         //strSQLPort="51178";
         //

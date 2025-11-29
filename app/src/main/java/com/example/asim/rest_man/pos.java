@@ -14,7 +14,8 @@ import android.os.Bundle;
 
 import android.os.Handler;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+import android.provider.Settings;
+import androidx.annotation.NonNull;
 
 import android.util.TypedValue;
 import android.view.Display;
@@ -75,7 +76,8 @@ public class pos extends Activity {
 
     ArrayList<tableData> TableData_List=new ArrayList<tableData>();
     //String strDeviceName="Emulator";
-    String strDeviceName = BluetoothAdapter.getDefaultAdapter().getName();
+    //String strDeviceName = BluetoothAdapter.getDefaultAdapter().getName();
+    String strDeviceName = "";
     int iSalesTax,iSC_Amount;
     int iMilliSeconds;
     int iDealGroupID=0;
@@ -88,6 +90,8 @@ public class pos extends Activity {
 
         setContentView(R.layout.pos);
         context = this.getBaseContext();
+
+        strDeviceName= Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_NAME);
 
         txtTableNo=(EditText) findViewById(R.id.txtTableno);
         txtServer=(EditText)  findViewById(R.id.txtServer);

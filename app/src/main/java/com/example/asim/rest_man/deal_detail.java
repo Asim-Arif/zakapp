@@ -13,7 +13,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.os.Handler;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import android.util.TypedValue;
 import android.view.Display;

@@ -2,7 +2,7 @@ package com.example.asim.rest_man;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Asim on 3/6/2017.
